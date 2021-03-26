@@ -14,11 +14,12 @@ public class ProviderTest {
 
         System.out.println("Dubbo provider start...");
 
+        // 如果不加这个，spring j2se应用会随着jvm关闭而关闭。
         try {
             System.in.read();   // 按任意键退出
         } catch (IOException e) {
             e.printStackTrace();
-        } 
+        }
         ((ConfigurableApplicationContext)context).close();
     }
 }
